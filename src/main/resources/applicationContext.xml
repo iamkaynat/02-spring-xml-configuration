@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id ="instructor" class="org.edutech.instructor.Instructor">
+        <constructor-arg value="Kaynat"/>
+        <constructor-arg value="2"/>
+    </bean>
+    <bean id="course" class="org.edutech.courses.Course">
+        <constructor-arg value="Spring Framework"/>
+        <constructor-arg ref="instructor"/>
+        <constructor-arg value="8 weeks"/>
+    </bean>
+        <bean id ="student" class="org.edutech.students.Student">
+            <constructor-arg index="0" value="Unzala"/>
+            <constructor-arg index="1" value="1"/>
+            <constructor-arg index="2" ref="course"/>
+        </bean>
+
+</beans>
